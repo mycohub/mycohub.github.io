@@ -1,4 +1,4 @@
-/* 🎨 Colors */
+/* Colors */
 :root{
   --primary-blue:#3E6BFF;
   --primary-blue-dark:#2c4bc4;
@@ -50,6 +50,30 @@ body{
   letter-spacing:.5px;
   font-size:2.25rem;
 }
+
+/* Language toggle */
+.lang-toggle{
+  margin-top:8px;
+  display:flex;
+  gap:8px;
+}
+.lang-toggle button{
+  appearance:none;
+  border:2px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.1);
+  color:#fff;
+  padding:6px 10px;
+  border-radius:8px;
+  font-weight:800;
+  cursor:pointer;
+}
+.lang-toggle button.active,
+.lang-toggle button:hover{
+  background:#fff;
+  color:var(--secondary-navy);
+  border-color:#fff;
+}
+
 .menu{
   margin-top:8px;
   display:flex;
