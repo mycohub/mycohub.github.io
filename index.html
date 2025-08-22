@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,59 +15,70 @@
       <img src="assets/logo.png" alt="MycoHUB Logo">
       <h1>MycoHUB</h1>
     </div>
+
+    <!-- Language toggle -->
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button type="button" data-lang="sv" aria-pressed="true">SV</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+
     <nav class="menu">
-      <a href="#">Home</a>
-      <a href="#">Knowledge Base</a>
-      <a href="#">Shop</a>
-      <a href="#">About</a>
+      <a href="#" data-i18n="nav.home">Hem</a>
+      <a href="#" data-i18n="nav.knowledge">Kunskapsbank</a>
+      <a href="#" data-i18n="nav.shop">Butik</a>
+      <a href="#" data-i18n="nav.about">Om oss</a>
     </nav>
   </header>
 
   <!-- MAIN -->
   <main class="page">
     <section class="intro">
-      <h2>Welcome to MycoHUB</h2>
-      <p>Simple, clean guides for gourmet mushroom cultivation. Tools coming soon.</p>
+      <h2 data-i18n="intro.title">Välkommen till MycoHUB</h2>
+      <p data-i18n="intro.tagline">Enkla, tydliga guider för odling av matsvampar. Verktyg kommer snart.</p>
     </section>
 
     <!-- CARD GRID -->
     <section class="grid">
+      <!-- Card 1 -->
       <article class="card">
         <div class="card-top">
-          <img class="icon" src="assets/icons/icon_bag.png" alt="Grow Bag Icon">
+          <img class="icon" src="assets/icons/icon_bag.png" alt="Ikon: svamppåse">
           <div class="meta">
-            <h3>Unicorn &amp; Grain Bags</h3>
-            <p>Sturdy bags for grain and substrate work.</p>
+            <h3 data-i18n="cards.bags.title">Unicorn- &amp; spannmålspåsar</h3>
+            <p data-i18n="cards.bags.body">Robusta påsar för spannmål och substratarbete.</p>
           </div>
         </div>
       </article>
 
+      <!-- Card 2 -->
       <article class="card">
         <div class="card-top">
-          <img class="icon" src="assets/icons/icon_filter_patch.png" alt="Filter Patch Icon">
+          <img class="icon" src="assets/icons/icon_filter_patch.png" alt="Ikon: filterpatch">
           <div class="meta">
-            <h3>Filter Patches</h3>
-            <p>Adhesive, breathable patches for monotubs &amp; lids.</p>
+            <h3 data-i18n="cards.filters.title">Filterpatchar</h3>
+            <p data-i18n="cards.filters.body">Självhäftande, luftgenomsläppliga patchar för monotubs och lock.</p>
           </div>
         </div>
       </article>
 
+      <!-- Card 3 -->
       <article class="card">
         <div class="card-top">
-          <img class="icon" src="assets/icons/icon_syringe.png" alt="Syringe Icon">
+          <img class="icon" src="assets/icons/icon_syringe.png" alt="Ikon: spruta">
           <div class="meta">
-            <h3>Syringes &amp; Ports</h3>
-            <p>Latex-free syringes and EPDM injection ports.</p>
+            <h3 data-i18n="cards.syringes.title">Sprutor &amp; injektionsportar</h3>
+            <p data-i18n="cards.syringes.body">Latexfria sprutor och injektionsportar i EPDM.</p>
           </div>
         </div>
       </article>
 
+      <!-- Card 4 -->
       <article class="card tall">
         <div class="card-top">
-          <img class="icon" src="assets/icons/icon_flask.png" alt="LC Vial Icon">
+          <img class="icon" src="assets/icons/icon_flask.png" alt="Ikon: vial för flytande kultur">
           <div class="meta">
-            <h3>Liquid Culture Vials</h3>
-            <p>Sterile vials prefilled with our in-house LC recipe. Multiply your spores or mycelium the easy way!</p>
+            <h3 data-i18n="cards.lc.title">Vialer för flytande kultur</h3>
+            <p data-i18n="cards.lc.body">Sterila vialer förfyllda med vår egen LC‑lösning. Föröka sporer eller mycel på ett enkelt sätt!</p>
           </div>
         </div>
       </article>
@@ -76,7 +87,78 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p>&copy; 2025 MycoHUB — Gourmet Mushroom Cultivation Tools &amp; Guides</p>
+    <p data-i18n="footer.copy">© 2025 MycoHUB — Verktyg &amp; guider för svampodling</p>
   </footer>
+
+  <!-- Manual i18n (no auto-translate) -->
+  <script>
+    // Manual translations you control
+    const I18N = {
+      sv: {
+        "nav.home": "Hem",
+        "nav.knowledge": "Kunskapsbank",
+        "nav.shop": "Butik",
+        "nav.about": "Om oss",
+        "intro.title": "Välkommen till MycoHUB",
+        "intro.tagline": "Enkla, tydliga guider för odling av matsvampar. Verktyg kommer snart.",
+        "cards.bags.title": "Unicorn- & spannmålspåsar",
+        "cards.bags.body": "Robusta påsar för spannmål och substratarbete.",
+        "cards.filters.title": "Filterpatchar",
+        "cards.filters.body": "Självhäftande, luftgenomsläppliga patchar för monotubs och lock.",
+        "cards.syringes.title": "Sprutor & injektionsportar",
+        "cards.syringes.body": "Latexfria sprutor och injektionsportar i EPDM.",
+        "cards.lc.title": "Vialer för flytande kultur",
+        "cards.lc.body": "Sterila vialer förfyllda med vår egen LC‑lösning. Föröka sporer eller mycel på ett enkelt sätt!",
+        "footer.copy": "© 2025 MycoHUB — Verktyg & guider för svampodling"
+      },
+      en: {
+        "nav.home": "Home",
+        "nav.knowledge": "Knowledge Base",
+        "nav.shop": "Shop",
+        "nav.about": "About",
+        "intro.title": "Welcome to MycoHUB",
+        "intro.tagline": "Simple, clean guides for gourmet mushroom cultivation. Tools coming soon.",
+        "cards.bags.title": "Unicorn & Grain Bags",
+        "cards.bags.body": "Sturdy bags for grain and substrate work.",
+        "cards.filters.title": "Filter Patches",
+        "cards.filters.body": "Adhesive, breathable patches for monotubs & lids.",
+        "cards.syringes.title": "Syringes & Ports",
+        "cards.syringes.body": "Latex‑free syringes and EPDM injection ports.",
+        "cards.lc.title": "Liquid Culture Vials",
+        "cards.lc.body": "Sterile vials prefilled with our in‑house LC solution. Multiply spores or mycel the easy way!",
+        "footer.copy": "© 2025 MycoHUB — Gourmet Mushroom Cultivation Tools & Guides"
+      }
+    };
+
+    const $ = (sel, ctx=document) => ctx.querySelector(sel);
+    const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+
+    function applyLang(lang){
+      const dict = I18N[lang] || I18N.sv;
+      $$("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        if (dict[key] != null) el.textContent = dict[key];
+      });
+      // toggle button states
+      $$(".lang-toggle button").forEach(btn=>{
+        const active = btn.getAttribute("data-lang") === lang;
+        btn.setAttribute("aria-pressed", active ? "true" : "false");
+        btn.classList.toggle("active", active);
+      });
+      // set html lang
+      document.documentElement.setAttribute("lang", lang);
+      // remember preference
+      try { localStorage.setItem("lang", lang); } catch(e){}
+    }
+
+    // set initial language (default sv)
+    const saved = (()=>{ try { return localStorage.getItem("lang"); } catch(e){ return null } })();
+    applyLang(saved || "sv");
+
+    // wire buttons
+    $$(".lang-toggle button").forEach(btn=>{
+      btn.addEventListener("click", ()=> applyLang(btn.getAttribute("data-lang")));
+    });
+  </script>
 </body>
 </html>
