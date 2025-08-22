@@ -10,10 +10,6 @@
   --card-bg:#3E6BFF;
   --card-text:#ffffff;
 
-  --dot-red:#E63946;
-  --dot-green:#2A9D8F;
-  --dot-yellow:#FFB703;
-
   --ink:#1f2430;
   --white:#ffffff;
 }
@@ -50,7 +46,7 @@ body{
 }
 .logo h1{
   margin:0;
-  font-weight:800;        /* bold but clean */
+  font-weight:800;
   letter-spacing:.5px;
   font-size:2.25rem;
 }
@@ -133,23 +129,6 @@ body{
   font-size:.95rem;
   opacity:.98;
 }
-
-/* Dots */
-.dots{
-  position:absolute;
-  bottom:12px;
-  right:12px;
-  display:flex;
-  gap:6px;
-}
-.dot{
-  width:12px; height:12px;
-  border-radius:50%;
-  box-shadow:0 2px 0 rgba(0,0,0,.25);
-}
-.dot.red{background:var(--dot-red)}
-.dot.green{background:var(--dot-green)}
-.dot.yellow{background:var(--dot-yellow)}
 
 /* Footer */
 .site-footer{
