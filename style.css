@@ -1,14 +1,12 @@
-/* Pixel-ish display font for headings (keeps body readable) */
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Inter:wght@400;600;700&display=swap');
-
 /* 🎨 Colors */
 :root{
-  --primary-blue:#3E6BFF;         /* tile */
-  --primary-blue-dark:#2c4bc4;    /* outline */
-  --primary-blue-shadow:#0e2b74;  /* drop shadow */
+  --primary-blue:#3E6BFF;
+  --primary-blue-dark:#2c4bc4;
+  --primary-blue-shadow:#0e2b74;
 
-  --secondary-navy:#0e2a58;       /* header/footer */
-  --page-bg:#f3f3f5;              /* site background */
+  --secondary-navy:#0e2a58;
+  --page-bg:#f3f3f5;
+
   --card-bg:#3E6BFF;
   --card-text:#ffffff;
 
@@ -23,17 +21,12 @@
 /* Base */
 *{box-sizing:border-box}
 html,body{height:100%}
-body {
-  margin: 0;
-  font-family: 'Nunito', sans-serif;  /* clean + modern */
-  background: var(--neutral-light);
-  color: #222;
-  line-height: 1.6;
-}
-
-.site-header h1 {
-  font-family: 'Press Start 2P', cursive; /* retro, but for logo only */
-  font-size: 2rem;
+body{
+  margin:0;
+  font-family: 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--page-bg);
+  color:var(--ink);
+  line-height:1.6;
 }
 
 /* Header */
@@ -51,14 +44,13 @@ body {
   gap:12px;
 }
 .logo img{
-  height:96px;                  /* bigger logo */
+  height:96px;
   image-rendering: crisp-edges;
   image-rendering: pixelated;
 }
 .logo h1{
   margin:0;
-  font-family:"Pixelify Sans", monospace;
-  font-weight:700;
+  font-weight:800;        /* bold but clean */
   letter-spacing:.5px;
   font-size:2.25rem;
 }
@@ -71,7 +63,7 @@ body {
 .menu a{
   color:var(--white);
   text-decoration:none;
-  font-weight:600;
+  font-weight:700;
   padding:6px 4px;
   border-radius:6px;
   transition:opacity .15s ease;
@@ -86,36 +78,36 @@ body {
 }
 .intro h2{
   margin:12px 0 4px;
-  font-family:"Pixelify Sans", monospace;
-  font-size:1.6rem;
+  font-weight:800;
+  font-size:1.75rem;
 }
 .intro p{margin:0 0 20px}
 
-/* Grid like the inspiration image */
+/* Grid */
 .grid{
   display:grid;
   grid-template-columns: repeat(12, 1fr);
   gap:16px;
 }
 
-/* Card */
+/* Cards */
 .card{
-  grid-column: span 4;                 /* 3 across on desktop */
+  grid-column: span 4;
   background:var(--card-bg);
   color:var(--card-text);
-  border:2px solid var(--primary-blue-dark);   /* pixel outline */
+  border:2px solid var(--primary-blue-dark);
   border-radius:14px;
   padding:16px;
   position:relative;
-  box-shadow: 0 8px 0 var(--primary-blue-shadow); /* chunky shadow */
+  box-shadow: 0 8px 0 var(--primary-blue-shadow);
 }
-.card.tall{ grid-column: span 4; grid-row: span 2; } /* visual variety */
+.card.tall{ grid-column: span 4; grid-row: span 2; }
 
 @media (max-width: 980px){
-  .card, .card.tall{ grid-column: span 6; grid-row:auto; } /* 2 across */
+  .card, .card.tall{ grid-column: span 6; grid-row:auto; }
 }
 @media (max-width: 640px){
-  .card, .card.tall{ grid-column: 1 / -1; }                 /* 1 across */
+  .card, .card.tall{ grid-column: 1 / -1; }
 }
 
 /* Card content */
@@ -127,22 +119,22 @@ body {
 .icon{
   width:64px;
   height:auto;
-  image-rendering: pixelated;        /* keep 8‑bit look */
+  image-rendering: pixelated;
   flex:0 0 auto;
   margin-top:2px;
 }
 .meta h3{
   margin:0 0 6px;
-  font-family:"Pixelify Sans", monospace;
+  font-weight:800;
   font-size:1.15rem;
 }
 .meta p{
   margin:0;
-  font-size:.92rem;
-  opacity:.95;
+  font-size:.95rem;
+  opacity:.98;
 }
 
-/* Colored dots (tags) */
+/* Dots */
 .dots{
   position:absolute;
   bottom:12px;
@@ -151,8 +143,7 @@ body {
   gap:6px;
 }
 .dot{
-  width:12px;
-  height:12px;
+  width:12px; height:12px;
   border-radius:50%;
   box-shadow:0 2px 0 rgba(0,0,0,.25);
 }
