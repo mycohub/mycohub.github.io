@@ -6,6 +6,8 @@ title: MycoHub
 # MycoHub
 Simple, clean guides for gourmet mushroom cultivation. Tools coming soon.
 
+<link rel="stylesheet" href="/assets/css/custom.css">
+
 <div class="cards">
   <a class="card" href="/articles/lc-from-spore-syringe.html">
     <h3>LC from Spore Syringe →</h3>
