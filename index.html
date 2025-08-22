@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MycoHub</title>
+  <title>MycoHUB</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
   <!-- HEADER -->
@@ -21,41 +22,80 @@
     </nav>
   </header>
 
-  <!-- MAIN BODY -->
-  <main class="page-body">
-    <h2>Welcome to MycoHUB</h2>
-    <p>Simple, clean guides for gourmet mushroom cultivation. Tools coming soon.</p>
+  <!-- MAIN -->
+  <main class="page">
+    <section class="intro">
+      <h2>Welcome to MycoHUB</h2>
+      <p>Simple, clean guides for gourmet mushroom cultivation. Tools coming soon.</p>
+    </section>
 
-    <div class="cards">
-      <div class="card">
-        <img src="assets/icons/icon_bag.png" alt="Grow Bag Icon">
-        <h3>Unicorn & Grain Bags</h3>
-        <p>Sturdy bags for grain and substrate work.</p>
-      </div>
+    <!-- PIXEL CARD GRID -->
+    <section class="grid">
+      <!-- Card 1 -->
+      <article class="card">
+        <div class="card-top">
+          <img class="icon" src="assets/icons/icon_bag.png" alt="Grow Bag Icon">
+          <div class="meta">
+            <h3>Unicorn &amp; Grain Bags</h3>
+            <p>Sturdy bags for grain and substrate work.</p>
+          </div>
+        </div>
+        <div class="dots">
+          <span class="dot red"></span>
+          <span class="dot green"></span>
+        </div>
+      </article>
 
-      <div class="card">
-        <img src="assets/icons/icon_filter_patch.png" alt="Filter Patch Icon">
-        <h3>Filter Patches</h3>
-        <p>Adhesive, breathable patches for monotubs & lids.</p>
-      </div>
+      <!-- Card 2 -->
+      <article class="card">
+        <div class="card-top">
+          <img class="icon" src="assets/icons/icon_filter_patch.png" alt="Filter Patch Icon">
+          <div class="meta">
+            <h3>Filter Patches</h3>
+            <p>Adhesive, breathable patches for monotubs &amp; lids.</p>
+          </div>
+        </div>
+        <div class="dots">
+          <span class="dot yellow"></span>
+        </div>
+      </article>
 
-      <div class="card">
-        <img src="assets/icons/icon_syringe.png" alt="Syringe Icon">
-        <h3>Syringes & Ports</h3>
-        <p>Latex‑free syringes and EPDM injection ports.</p>
-      </div>
+      <!-- Card 3 -->
+      <article class="card">
+        <div class="card-top">
+          <img class="icon" src="assets/icons/icon_syringe.png" alt="Syringe Icon">
+          <div class="meta">
+            <h3>Syringes &amp; Ports</h3>
+            <p>Latex‑free syringes and EPDM injection ports.</p>
+          </div>
+        </div>
+        <div class="dots">
+          <span class="dot green"></span>
+          <span class="dot red"></span>
+        </div>
+      </article>
 
-      <div class="card">
-        <img src="assets/icons/icon_flask.png" alt="LC Vial Icon">
-        <h3>Liquid Culture Vials</h3>
-        <p>Sterile vials prefilled with our in house liquid culture recipe. Multiply your spores or mycelium the easy way!</p>
-      </div>
-    </div>
+      <!-- Card 4 (taller, like a feature) -->
+      <article class="card tall">
+        <div class="card-top">
+          <img class="icon" src="assets/icons/icon_flask.png" alt="LC Vial Icon">
+          <div class="meta">
+            <h3>Liquid Culture Vials</h3>
+            <p>Sterile vials prefilled with our in‑house LC recipe. Multiply your spores or mycelium the easy way!</p>
+          </div>
+        </div>
+        <div class="dots">
+          <span class="dot green"></span>
+          <span class="dot yellow"></span>
+          <span class="dot red"></span>
+        </div>
+      </article>
+    </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p>&copy; 2025 MycoHUB — Gourmet Mushroom Cultivation Tools & Guides</p>
+    <p>&copy; 2025 MycoHUB — Gourmet Mushroom Cultivation Tools &amp; Guides</p>
   </footer>
 </body>
 </html>
