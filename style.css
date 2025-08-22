@@ -72,7 +72,9 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .card img {
-  width: 48px;
+  width: 64px;            /* consistent size */
+  height: auto;
+  image-rendering: pixelated; /* keep 8‑bit look crisp */
   margin-bottom: 12px;
 }
 .card:hover {
