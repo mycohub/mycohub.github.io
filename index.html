@@ -11,23 +11,42 @@
 <body>
   <!-- HEADER -->
   <header class="site-header">
-    <div class="logo">
-      <img src="assets/logo.png" alt="MycoHUB Logo">
-      <h1>MycoHUB</h1>
-    </div>
+    <div class="header-inner">
+      <!-- Left: Logo -->
+      <div class="logo">
+        <img src="assets/logo.png" alt="MycoHUB Logo">
+        <h1>MycoHUB</h1>
+      </div>
 
-    <!-- Language toggle -->
-    <div class="lang-toggle" role="group" aria-label="Language selector">
-      <button type="button" data-lang="sv" aria-pressed="true">SV</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
-    </div>
+      <!-- Center: Nav -->
+      <nav class="menu">
+        <a href="#" data-i18n="nav.home">Hem</a>
+        <a href="#" data-i18n="nav.knowledge">Kunskapsbank</a>
+        <a href="#" data-i18n="nav.shop">Butik</a>
+        <a href="#" data-i18n="nav.about">Om oss</a>
+      </nav>
 
-    <nav class="menu">
-      <a href="#" data-i18n="nav.home">Hem</a>
-      <a href="#" data-i18n="nav.knowledge">Kunskapsbank</a>
-      <a href="#" data-i18n="nav.shop">Butik</a>
-      <a href="#" data-i18n="nav.about">Om oss</a>
-    </nav>
+      <!-- Right: Language flags -->
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button type="button" class="flag-btn" data-lang="sv" aria-pressed="true" title="Svenska" aria-label="Svenska">
+          <!-- Sweden -->
+          <svg viewBox="0 0 16 12" aria-hidden="true"><rect width="16" height="12" fill="#006AA7"/><rect x="5" width="2" height="12" fill="#FECC00"/><rect y="5" width="16" height="2" fill="#FECC00"/></svg>
+        </button>
+        <button type="button" class="flag-btn" data-lang="en" aria-pressed="false" title="English" aria-label="English">
+          <!-- UK -->
+          <svg viewBox="0 0 16 12" aria-hidden="true">
+            <clipPath id="u"><rect width="16" height="12" rx="1"/></clipPath>
+            <g clip-path="url(#u)">
+              <path d="M0 0h16v12H0z" fill="#012169"/>
+              <path d="M-1.5 0l7.5 5.25L13.5 0H16v1.5L8.5 6 16 10.5V12h-2.5L6 6.75 0 12H-1.5v-1.5L6.5 6 -1.5 1.5V0h1.5z" fill="#FFF"/>
+              <path d="M10.7 6l5.3 3.7V12l-6.9-4.9M-1.5 0L5.1 4.9h-2L-1.5 1.6V0zM16 0v1.6l-5.1 3.3h-2L16 0zM-1.5 12V10.7l5.3-3.7h2L-1.5 12z" fill="#C8102E"/>
+              <path d="M6 0h4v12H6z" fill="#FFF"/><path d="M0 4h16v4H0z" fill="#FFF"/>
+              <path d="M7 0h2v12H7z" fill="#C8102E"/><path d="M0 5h16v2H0z" fill="#C8102E"/>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
   </header>
 
   <!-- MAIN -->
@@ -39,7 +58,6 @@
 
     <!-- CARD GRID -->
     <section class="grid">
-      <!-- Card 1 -->
       <article class="card">
         <div class="card-top">
           <img class="icon" src="assets/icons/icon_bag.png" alt="Ikon: svamppåse">
@@ -50,7 +68,6 @@
         </div>
       </article>
 
-      <!-- Card 2 -->
       <article class="card">
         <div class="card-top">
           <img class="icon" src="assets/icons/icon_filter_patch.png" alt="Ikon: filterpatch">
@@ -61,7 +78,6 @@
         </div>
       </article>
 
-      <!-- Card 3 -->
       <article class="card">
         <div class="card-top">
           <img class="icon" src="assets/icons/icon_syringe.png" alt="Ikon: spruta">
@@ -72,7 +88,6 @@
         </div>
       </article>
 
-      <!-- Card 4 -->
       <article class="card tall">
         <div class="card-top">
           <img class="icon" src="assets/icons/icon_flask.png" alt="Ikon: vial för flytande kultur">
@@ -87,12 +102,11 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p data-i18n="footer.copy">© 2025 MycoHUB — Verktyg &amp; guider för svampodling</p>
+    <p data-i18n="footer.copy">© 2025 MycoHUB — Verktyg & guider för svampodling</p>
   </footer>
 
-  <!-- Manual i18n (no auto-translate) -->
+  <!-- Manual i18n (you control all strings) -->
   <script>
-    // Manual translations you control
     const I18N = {
       sv: {
         "nav.home": "Hem",
@@ -130,33 +144,28 @@
       }
     };
 
-    const $ = (sel, ctx=document) => ctx.querySelector(sel);
-    const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+    const $ = (s, c=document)=>c.querySelector(s);
+    const $$ = (s, c=document)=>Array.from(c.querySelectorAll(s));
 
     function applyLang(lang){
       const dict = I18N[lang] || I18N.sv;
       $$("[data-i18n]").forEach(el=>{
-        const key = el.getAttribute("data-i18n");
-        if (dict[key] != null) el.textContent = dict[key];
+        const k = el.getAttribute("data-i18n");
+        if (dict[k] != null) el.textContent = dict[k];
       });
-      // toggle button states
-      $$(".lang-toggle button").forEach(btn=>{
+      // buttons
+      $$(".flag-btn").forEach(btn=>{
         const active = btn.getAttribute("data-lang") === lang;
         btn.setAttribute("aria-pressed", active ? "true" : "false");
         btn.classList.toggle("active", active);
       });
-      // set html lang
       document.documentElement.setAttribute("lang", lang);
-      // remember preference
-      try { localStorage.setItem("lang", lang); } catch(e){}
+      try{ localStorage.setItem("lang", lang); }catch(e){}
     }
 
-    // set initial language (default sv)
-    const saved = (()=>{ try { return localStorage.getItem("lang"); } catch(e){ return null } })();
+    const saved = (()=>{ try{return localStorage.getItem("lang");}catch(e){return null;} })();
     applyLang(saved || "sv");
-
-    // wire buttons
-    $$(".lang-toggle button").forEach(btn=>{
+    $$(".flag-btn").forEach(btn=>{
       btn.addEventListener("click", ()=> applyLang(btn.getAttribute("data-lang")));
     });
   </script>
