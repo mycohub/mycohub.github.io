@@ -23,12 +23,17 @@
 /* Base */
 *{box-sizing:border-box}
 html,body{height:100%}
-body{
-  margin:0;
-  background:var(--page-bg);
-  color:var(--ink);
-  font-family: Inter, system-ui, Arial, sans-serif;
-  line-height:1.55;
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;  /* clean + modern */
+  background: var(--neutral-light);
+  color: #222;
+  line-height: 1.6;
+}
+
+.site-header h1 {
+  font-family: 'Press Start 2P', cursive; /* retro, but for logo only */
+  font-size: 2rem;
 }
 
 /* Header */
