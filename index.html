@@ -12,21 +12,21 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
-      <!-- Left: Logo -->
-      <div class="logo">
-        <img src="assets/logo.png" alt="MycoHUB Logo">
-        <h1>MycoHUB</h1>
+      <!-- Left: logo + nav grouped -->
+      <div class="nav-left">
+        <a href="#" class="logo">
+          <img src="assets/logo.png" alt="MycoHUB Logo">
+          <span class="brand">MycoHUB</span>
+        </a>
+        <nav class="menu">
+          <a href="#" data-i18n="nav.home">Hem</a>
+          <a href="#" data-i18n="nav.knowledge">Kunskapsbank</a>
+          <a href="#" data-i18n="nav.shop">Butik</a>
+          <a href="#" data-i18n="nav.about">Om oss</a>
+        </nav>
       </div>
 
-      <!-- Center: Nav -->
-      <nav class="menu">
-        <a href="#" data-i18n="nav.home">Hem</a>
-        <a href="#" data-i18n="nav.knowledge">Kunskapsbank</a>
-        <a href="#" data-i18n="nav.shop">Butik</a>
-        <a href="#" data-i18n="nav.about">Om oss</a>
-      </nav>
-
-      <!-- Right: Language flags -->
+      <!-- Right: language flags -->
       <div class="lang-toggle" role="group" aria-label="Language selector">
         <button type="button" class="flag-btn" data-lang="sv" aria-pressed="true" title="Svenska" aria-label="Svenska">
           <!-- Sweden -->
@@ -53,7 +53,7 @@
   <main class="page">
     <section class="intro">
       <h2 data-i18n="intro.title">Välkommen till MycoHUB</h2>
-      <p data-i18n="intro.tagline">Enkla, tydliga guider för odling av matsvampar. Verktyg kommer snart.</p>
+      <p data-i18n="intro.tagline">Vi gör svampodling enkelt för hobbyodlare med tydliga guider, smarta verktyg och nödvändiga förbrukningsvaror.</p>
     </section>
 
     <!-- CARD GRID -->
@@ -62,8 +62,8 @@
         <div class="card-top">
           <img class="icon" src="assets/icons/icon_bag.png" alt="Ikon: svamppåse">
           <div class="meta">
-            <h3 data-i18n="cards.bags.title">Unicorn- &amp; spannmålspåsar</h3>
-            <p data-i18n="cards.bags.body">Robusta påsar för spannmål och substratarbete.</p>
+            <h3 data-i18n="cards.bags.title">Odlingspåsar</h3>
+            <p data-i18n="cards.bags.body">Robusta påsar för spannmål och substrat.</p>
           </div>
         </div>
       </article>
@@ -72,8 +72,8 @@
         <div class="card-top">
           <img class="icon" src="assets/icons/icon_filter_patch.png" alt="Ikon: filterpatch">
           <div class="meta">
-            <h3 data-i18n="cards.filters.title">Filterpatchar</h3>
-            <p data-i18n="cards.filters.body">Självhäftande, luftgenomsläppliga patchar för monotubs och lock.</p>
+            <h3 data-i18n="cards.filters.title">Filter och filterstickers</h3>
+            <p data-i18n="cards.filters.body">Självhäftande, luftgenomsläppliga stickers för monotubs och lock.</p>
           </div>
         </div>
       </article>
@@ -83,7 +83,7 @@
           <img class="icon" src="assets/icons/icon_syringe.png" alt="Ikon: spruta">
           <div class="meta">
             <h3 data-i18n="cards.syringes.title">Sprutor &amp; injektionsportar</h3>
-            <p data-i18n="cards.syringes.body">Latexfria sprutor och injektionsportar i EPDM.</p>
+            <p data-i18n="cards.syringes.body">Förbrukningsmaterial för Liquid Culture.</p>
           </div>
         </div>
       </article>
@@ -92,8 +92,8 @@
         <div class="card-top">
           <img class="icon" src="assets/icons/icon_flask.png" alt="Ikon: vial för flytande kultur">
           <div class="meta">
-            <h3 data-i18n="cards.lc.title">Vialer för flytande kultur</h3>
-            <p data-i18n="cards.lc.body">Sterila vialer förfyllda med vår egen LC‑lösning. Föröka sporer eller mycel på ett enkelt sätt!</p>
+            <h3 data-i18n="cards.lc.title">Vialer för Liquid Culture</h3>
+            <p data-i18n="cards.lc.body">Sterila flaskor förfyllda med vår egen LC‑lösning. Fördubbla sporer eller mycel på ett enkelt sätt!</p>
           </div>
         </div>
       </article>
@@ -105,7 +105,7 @@
     <p data-i18n="footer.copy">© 2025 MycoHUB — Verktyg & guider för svampodling</p>
   </footer>
 
-  <!-- Manual i18n (you control all strings) -->
+  <!-- Manual i18n -->
   <script>
     const I18N = {
       sv: {
@@ -144,8 +144,8 @@
       }
     };
 
-    const $ = (s, c=document)=>c.querySelector(s);
-    const $$ = (s, c=document)=>Array.from(c.querySelectorAll(s));
+    const $ = (s,c=document)=>c.querySelector(s);
+    const $$ = (s,c=document)=>Array.from(c.querySelectorAll(s));
 
     function applyLang(lang){
       const dict = I18N[lang] || I18N.sv;
@@ -153,7 +153,6 @@
         const k = el.getAttribute("data-i18n");
         if (dict[k] != null) el.textContent = dict[k];
       });
-      // buttons
       $$(".flag-btn").forEach(btn=>{
         const active = btn.getAttribute("data-lang") === lang;
         btn.setAttribute("aria-pressed", active ? "true" : "false");
