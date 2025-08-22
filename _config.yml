@@ -1,3 +1,8 @@
-theme: jekyll-theme-cayman
-title: MycoHub
-description: Gourmet mushroom cultivation guides
+plugins: []  # keep default (no extra plugins on Pages)
+sass:
+  style: compressed
+include:
+  - assets
+defaults:
+  - scope: {path: ""} 
+    values: {css: "/assets/css/custom.css"}
